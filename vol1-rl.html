@@ -18,12 +18,16 @@ title: "Volume 1: Rejection Letters (RL)"
             
             <header class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
                 <div class="flex flex-col sm:flex-row justify-between items-start mb-2">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 leading-tight">{{ post.title }}</h3>
-                    <span class="text-xs text-gray-400 whitespace-nowrap sm:ml-4 mt-2 sm:mt-0">Received: {{ post.date | date: "%B %d, %Y" }}</span>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 leading-tight mb-2 sm:mb-0">{{ post.title }}</h3>
+                    
+                    <div class="flex flex-col sm:items-end">
+                        <span class="text-xs text-gray-400 whitespace-nowrap">Published: {{ post.date | date: "%B %d, %Y" }}</span>
+                        <span class="text-[10px] font-mono text-gray-400 dark:text-gray-500 mt-1">Rejected Object Identifier, ROI: 10.IJOR/RL.{{ post.date | date: "%Y%m%d.%H%M" }}</span>
+                    </div>
                 </div>
                 
                 {% if post.rejection_type %}
-                <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest">{{ post.rejection_type }}</p>
+                <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-widest mt-2">{{ post.rejection_type }}</p>
                 {% endif %}
             </header>
 
