@@ -2,7 +2,7 @@
 layout: study
 category: volume2
 title: "Evaluating Cognitive Load in VR Simulation-Based Training for AECO Professionals"
-date: 2026-03-04 10:00:00
+date: 2026-03-03 10:00:00
 discipline: "AECO Informatics"
 gdrive_link: "https://drive.google.com/file/d/1dummy_link_here/view?usp=sharing"
 ---
