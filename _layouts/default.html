@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rejected.study | The International Journal of Rejections</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { journal: { 500: '#ef4444', 600: '#dc2626' } }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .fade-out { opacity: 0; transition: opacity 0.5s ease; }
+        .fade-in { opacity: 1; transition: opacity 0.5s ease; }
+        html { scroll-behavior: smooth; }
+        section { scroll-margin-top: 4rem; }
+    </style>
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100 font-sans antialiased transition-colors duration-300 flex flex-col md:flex-row min-h-screen selection:bg-journal-500 selection:text-white">
+
+    <div class="fixed top-4 right-6 z-50 flex items-center gap-4">
+        <button id="theme-toggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle dark mode">
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path>
+            </svg>
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+        </button>
+    </div>
+
+    <header class="md:hidden flex flex-col border-b border-gray-200 dark:border-gray-800 p-6 bg-gray-50 dark:bg-gray-900">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold tracking-tight">rejected.study</h2>
+        </div>
+        <nav class="flex flex-wrap gap-4 text-sm font-medium">
+            <a href="/index.html#home" class="text-journal-600 dark:text-journal-500">Home</a>
+            <a href="/index.html#aims" class="hover:text-journal-600 transition-colors">Aim & Scope</a>
+            <a href="/index.html#editorial" class="hover:text-journal-600 transition-colors">Editorial Board</a>
+            <a href="/index.html#guide" class="hover:text-journal-600 transition-colors">Guide for Authors</a>
+            <a href="/vol1-rl.html" class="hover:text-journal-600 transition-colors">Vol 1: RL</a>
+            <a href="/vol2-rs.html" class="hover:text-journal-600 transition-colors">Vol 2: RS</a>
+            <a href="/vol3-rrs.html" class="hover:text-journal-600 transition-colors">Vol 3: RRS</a>
+        </nav>
+    </header>
+
+    <aside class="hidden md:flex flex-col w-64 lg:w-72 h-screen fixed top-0 left-0 border-r border-gray-200 dark:border-gray-800 py-12 px-8 overflow-y-auto bg-gray-50 dark:bg-gray-900">
+        <div class="mb-12">
+            <div class="w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded mb-6 flex items-center justify-center text-2xl">🗑️</div>
+            <h1 class="text-2xl font-bold tracking-tight mb-1">rejected.study</h1>
+            <p class="text-xs text-gray-500 dark:text-gray-400 uppercase tracking-widest font-semibold">The Intl. Journal of Rejections</p>
+        </div>
+
+        <nav class="flex flex-col space-y-4 mb-12 flex-1">
+            <a href="/index.html#home" class="text-sm font-semibold text-journal-600 dark:text-journal-500 hover:text-journal-500 transition-colors">Home</a>
+            <a href="/index.html#aims" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-journal-600 transition-colors">Aim and scope</a>
+            <a href="/index.html#editorial" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-journal-600 transition-colors">Editorial board</a>
+            <a href="/index.html#guide" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-journal-600 transition-colors">Guide for authors</a>
+            
+            <div class="h-px bg-gray-200 dark:bg-gray-800 my-2"></div>
+            
+            <a href="/vol1-rl.html" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-journal-600 transition-colors">Volume 1: Rejection Letters (RL)</a>
+            <a href="/vol2-rs.html" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-journal-600 transition-colors">Volume 2: Rejected Studies (RS)</a>
+            <a href="/vol3-rrs.html" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-journal-600 transition-colors">Volume 3: Retracted Rejected Studies (RRS)</a>
+            
+            <div class="pt-6">
+                <a href="/index.html#submit" class="block w-full text-center bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 px-4 py-2.5 rounded text-sm font-semibold hover:bg-journal-600 dark:hover:bg-journal-500 dark:hover:text-white transition-all">Submit your article</a>
+            </div>
+        </nav>
+
+        <div class="mt-auto text-xs text-gray-500 dark:text-gray-500 space-y-2">
+            <p>&copy; 2026 rejected.study.<br>All Rights Wasted.</p>
+        </div>
+    </aside>
+
+    {{ content }}
+
+    <script>
+        var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            themeToggleLightIcon.classList.remove('hidden');
+        } else {
+            themeToggleDarkIcon.classList.remove('hidden');
+        }
+
+        var themeToggleBtn = document.getElementById('theme-toggle');
+
+        themeToggleBtn.addEventListener('click', function() {
+            themeToggleDarkIcon.classList.toggle('hidden');
+            themeToggleLightIcon.classList.toggle('hidden');
+
+            if (localStorage.getItem('theme')) {
+                if (localStorage.getItem('theme') === 'light') {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                }
+            } else {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            }
+        });
+
+        // Greeting Animation (Only runs if the element exists on the page)
+        const greetingElement = document.getElementById('greeting');
+        if (greetingElement) {
+            const greetings = [
+                '"We regret to inform you..."',
+                '"Lacks sufficient novelty."',
+                '"Outside the scope of this journal."',
+                '"Reviewer 2 recommends rejection."',
+                '"The methodology is fundamentally flawed."'
+            ];
+            let currentIndex = 0;
+            
+            function cycleGreeting() {
+                greetingElement.classList.add('fade-out');
+                setTimeout(() => {
+                    currentIndex = (currentIndex + 1) % greetings.length;
+                    greetingElement.textContent = greetings[currentIndex];
+                    setTimeout(() => {
+                        greetingElement.classList.remove('fade-out');
+                    }, 50);
+                }, 500);
+            }
+            setTimeout(() => { setInterval(cycleGreeting, 3500); }, 2000);
+        }
+    </script>
+</body>
+</html>
