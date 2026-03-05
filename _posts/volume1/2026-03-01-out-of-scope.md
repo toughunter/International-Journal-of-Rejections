@@ -15,4 +15,5 @@ After careful consideration by the editorial board, we have determined that your
 We wish you the best of luck in finding a more suitable venue for this work.
 
 Sincerely,
+
 The Editorial Office
