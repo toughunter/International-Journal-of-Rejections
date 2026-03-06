@@ -129,7 +129,7 @@ layout: default
                 </div>
             </div>
     
-            <p class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm text-gray-500 italic">
+            <p class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm text-gray-400 italic">
                 Note: Please indicate your target volume(s) clearly in the subject line of your submission email.
             </p>
         </div>
@@ -138,6 +138,63 @@ layout: default
     <section id="submit" class="mb-24">
         <h3 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Action</h3>
         <h2 class="text-3xl font-bold mb-6">Submit your article</h2>
+        <p class="text-gray-600 dark:text-gray-400 mb-8">
+            Ready to stop hiding your rejected science in a desktop folder? Give your hard work the Rejected Object Identifier (ROI) it deserves.
+        </p>
+    
+        <button id="reveal-btn" onclick="toggleSubmission()" class="bg-journal-600 hover:bg-journal-700 text-white font-bold py-3 px-8 rounded-lg shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-journal-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+            Reveal Submission Instructions
+        </button>
+    
+        <div id="submission-details" class="hidden mt-8 bg-gray-50 dark:bg-gray-900 p-6 md:p-8 rounded-xl border border-gray-200 dark:border-gray-800 shadow-inner">
+            <h3 class="text-xl font-bold mb-4">Where to Send Your Work</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+                Please email your materials directly to the Chief Archivist at:
+            </p>
+            
+            <div class="mb-8 p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg inline-block">
+                <a href="mailto:xxx@xxx" class="text-xl md:text-2xl font-mono text-journal-600 dark:text-journal-500 hover:underline break-all">
+                    xxx@xxx
+                </a>
+            </div>
+            
+            <h4 class="font-bold text-gray-900 dark:text-gray-100 mb-3 uppercase tracking-widest text-xs">Pre-Flight Checklist:</h4>
+            <ul class="list-disc list-inside text-sm text-gray-600 dark:text-gray-400 space-y-2 ml-2">
+                <li><strong>Subject Line:</strong> Clearly state the target volume (e.g., <em>"Submission: Volume 1"</em>).</li>
+                <li><strong>Volume 1:</strong> Include your thematic nickname and the raw rejection text. <strong>Strip all real names and journal identifiers.</strong></li>
+                <li><strong>Volume 2:</strong> Attach your manuscript as a PDF and any optional reviewer comments or rebuttals.</li>
+                <li><strong>Volume 3:</strong> Provide the new, official publication's DOI or link so we can issue your retraction.</li>
+            </ul>
+        </div>
     </section>
+
+    <script>
+        function toggleSubmission() {
+            const details = document.getElementById('submission-details');
+            const btn = document.getElementById('reveal-btn');
+            
+            if (details.classList.contains('hidden')) {
+                // Show the details
+                details.classList.remove('hidden');
+                details.classList.add('block');
+                
+                // Change button text and color to indicate "Close"
+                btn.textContent = 'Hide Submission Instructions';
+                btn.classList.replace('bg-journal-600', 'bg-gray-600');
+                btn.classList.replace('hover:bg-journal-700', 'hover:bg-gray-700');
+                btn.classList.replace('focus:ring-journal-500', 'focus:ring-gray-500');
+            } else {
+                // Hide the details
+                details.classList.add('hidden');
+                details.classList.remove('block');
+                
+                // Revert button text and color
+                btn.textContent = 'Reveal Submission Instructions';
+                btn.classList.replace('bg-gray-600', 'bg-journal-600');
+                btn.classList.replace('hover:bg-gray-700', 'hover:bg-journal-700');
+                btn.classList.replace('focus:ring-gray-500', 'focus:ring-journal-500');
+            }
+        }
+    </script>
 
 </main>
