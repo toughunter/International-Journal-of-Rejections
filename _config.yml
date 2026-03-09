@@ -1,5 +1,13 @@
+# Site Settings
+title: "International Journal of Rejections"
+description: "A final resting place for rejected papers."
+author: "The Editorial Assistant (๑•̀ㅂ•́)و✧"
+
+# URL Settings
 url: "https://rejectedpaper.com"
 baseurl: ""
+
+# Build Settings & Plugins
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
